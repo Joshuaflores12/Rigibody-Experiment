@@ -8,6 +8,7 @@ public class BouncingBall : MonoBehaviour
     public float gravityScale = 1.0f;
     public static float globalGravity = 9.8f;
     public float forceAmount;
+   
 
    
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class BouncingBall : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 gravity = globalGravity * gravityScale * Vector3.down;
-        rb.AddForce(gravity, ForceMode.Acceleration);
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -31,6 +32,7 @@ public class BouncingBall : MonoBehaviour
             if (forceAmount <= 0) 
             {
             forceAmount = 0;
+            
             }
             
         }

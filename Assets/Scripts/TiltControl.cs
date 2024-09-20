@@ -10,7 +10,8 @@ public class TiltControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = -Input.GetAxis("Horizontal");
+        float horizontal = -Input.GetAxis("Vertical");
         transform.Rotate(Vector3.forward, horizontal * Time.deltaTime * tiltSpeed);
+
     }
 }
