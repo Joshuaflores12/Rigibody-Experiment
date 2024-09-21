@@ -5,9 +5,9 @@ using UnityEngine;
 public class BouncingBall : MonoBehaviour
 {
     public Rigidbody rb;
-    public float gravityScale = 1.0f;
-    public static float globalGravity = 9.8f;
-    public float forceAmount;
+    [SerializeField] private float gravityScale = 1.0f;
+    [SerializeField]private static float globalGravity = 9.8f;
+    [SerializeField]private float forceAmount;
    
 
    
@@ -28,13 +28,6 @@ public class BouncingBall : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             rb.AddForce(Vector3.up * forceAmount, ForceMode.Impulse);
-            forceAmount -= 5f;
-            if (forceAmount <= 0) 
-            {
-            forceAmount = 0;
-            
-            }
-            
         }
     }
 }
