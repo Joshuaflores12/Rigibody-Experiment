@@ -10,7 +10,7 @@ public class BouncingBall : MonoBehaviour
     [SerializeField] private float forceAmount; // force applied
     [SerializeField] private float decayF;      // percentage of loss energy to force
     [SerializeField] private float minForceAmount; // min force for velocity to come to a hault
-    [SerializeField] private float coefficientOfResititution;
+    [SerializeField] private float coefficientOfResititution; 
    
 
    
@@ -34,6 +34,7 @@ public class BouncingBall : MonoBehaviour
         {
             decayF = coefficientOfResititution; // COR is based on the elasticity of the material where ranges from 0 - 1 the higher it is the higher the energy is stored and lost upon impact with another object
             forceAmount *= decayF; // to get the percentage of the energy lost of which will be the new force amount 
+            
             if (forceAmount > minForceAmount)
             {
                 rb.AddForce(Vector3.up * forceAmount, ForceMode.Impulse);
@@ -41,7 +42,7 @@ public class BouncingBall : MonoBehaviour
             }
             else 
             {
-            rb.velocity = Vector3.zero;
+                rb.velocity = Vector3.zero;
             }
         }
     }
